@@ -1,6 +1,6 @@
 var EPD = require('./epd1in54.js');
 
-var epd = new epd();
+var epd = new EPD();
 
 epd.init(EPD.lut_full_update).then(d => {
     console.log('EPD init.')
