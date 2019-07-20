@@ -31,7 +31,7 @@ function spi_transfer (data) {
 function epd_init (dev = "/dev/spidev0.0") {
     return new Promise(function (resolve, reject) {
 
-        spi = SPI.initialize(de);
+        spi = SPI.initialize(dev);
         spi.clockSpeed(2000000);
 
         Promise.all([
