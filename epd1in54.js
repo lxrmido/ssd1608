@@ -206,9 +206,17 @@ function EPD1IN54() {
                         }
                         this.send_data_array(dataArray).then(() => {
                             resolve();
+                        }).catch(error => {
+                            reject(error);
                         })
+                    }).catch(error => {
+                        reject(error);
                     })
+                }).catch(error => {
+                    reject(error);
                 })
+            }).catch(error => {
+                reject(error);
             })
         })
     };
@@ -239,7 +247,7 @@ function EPD1IN54() {
                     reject(error)
                 })
             }).catch(error => {
-                this.reject(error)
+                reject(error)
             })
         });
     };
@@ -313,5 +321,8 @@ function EPD1IN54() {
     }
 
 };
+
+EPD1IN54.lut_full_update = lut_full_update;
+EPD1IN54.lut_partial_update = lut_partial_update;
 
 module.exports = EPD1IN54;
